@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Inter:wght@300;400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  
+  --color-beige-50: #fdfaf7;
+  --color-beige-100: #ede0d4; /* User specified background */
+  --color-beige-200: #e6d5c5;
+  --color-beige-300: #dfcab6;
+  --color-beige-400: #d8bfa7;
+  --color-beige-500: #d1b498;
+  --color-beige-600: #c09e80;
+  --color-beige-700: #af8868;
+  --color-beige-800: #8e6d53;
+  --color-beige-900: #594236; /* User specified typography */
+}
+
+@layer base {
+  body {
+    @apply bg-beige-100 text-beige-900 font-sans antialiased selection:bg-beige-300;
+    cursor: default;
+  }
+
+  h1, h2, h3 {
+    @apply font-serif font-light;
+  }
+}
+
+.plaster-surface {
+  background-image: url("https://www.transparenttextures.com/patterns/p6.png");
+  background-blend-mode: soft-light;
+}
+
+.warm-glow {
+  box-shadow: 0 0 60px rgba(205, 195, 184, 0.1);
+}
+
+.grain-texture {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.01;
+  background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+}
