@@ -10,7 +10,7 @@ export default function Hero() {
         className="absolute inset-0 z-0 translate-y-24"
       >
         <img 
-          src="/images/entrée.06.44.png" 
+          src="/images/entrance.png" 
           alt="Warm beige minimalist coffee shop interior" 
           className="w-full h-full object-cover brightness-[1.02] contrast-[1.05]"
           referrerPolicy="no-referrer"

@@ -8,7 +8,7 @@ const vignettes = [
   },
   {
     title: "Coffee",
-    image: "/images/Coffee.webp",
+    image: "/images/coffee.webp",
     description: "café, caramel et cannelle"
   },
   {
