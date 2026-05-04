@@ -23,15 +23,15 @@ const vignettes = [
 
 export default function VignetteGrid() {
   return (
-    <section className="py-60 px-8 md:px-24 bg-beige-100 plaster-surface" id="vignettes">
+    <section className="pt-12 md:pt-16 pb-12 px-8 md:px-24 bg-beige-100 plaster-surface" id="vignettes">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-24">
         {vignettes.map((item, index) => (
           <motion.div
             key={item.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ y: 20 }}
+            whileInView={{ y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 2, delay: index * 0.3, ease: "easeOut" }}
+            transition={{ duration: 1.5, delay: index * 0.1, ease: "easeOut" }}
             className="group"
           >
             <div className="relative aspect-[4/5] overflow-hidden rounded-[3rem] bg-beige-200 warm-glow">

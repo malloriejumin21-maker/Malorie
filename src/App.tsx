@@ -25,7 +25,22 @@ export default function App() {
         
         <main className="relative z-10">
           <Hero />
+          
+          {/* Main Title Section relocated above photos */}
+          <section className="pt-24 pb-8 bg-beige-100 text-center overflow-hidden">
+            <motion.h1 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 2, ease: "easeOut" }}
+              className="text-beige-950 text-5xl md:text-8xl font-serif font-medium tracking-[0.6em] mr-[-0.6em]"
+            >
+              BEIGE
+            </motion.h1>
+          </section>
+
           <VignetteGrid />
+          
           <About />
           <Newsletter />
         </main>

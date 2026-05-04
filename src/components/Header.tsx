@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { User, ShoppingBag } from "lucide-react";
 
 export default function Header() {
   const navLinks = [
@@ -7,7 +8,6 @@ export default function Header() {
     { name: "événements", href: "#" },
     { name: "actualités", href: "#" },
     { name: "nous", href: "#" },
-    { name: "nous trouver", href: "#" },
   ];
 
   return (
@@ -15,20 +15,39 @@ export default function Header() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 2, ease: "easeOut" }}
-      className="fixed top-0 left-0 w-full z-40 px-8 py-12 flex justify-center items-center"
+      className="fixed top-0 left-0 w-full z-40 px-8 md:px-12 py-6 flex justify-between items-center bg-beige-900 shadow-md backdrop-blur-sm"
       id="main-header"
     >
-      <nav className="flex space-x-16">
+      {/* Brand Logo - Left */}
+      <div className="flex-1">
+        <a href="#" className="text-2xl font-serif tracking-[0.3em] lowercase text-beige-100 hover:text-beige-50 transition-colors duration-500">
+          beige
+        </a>
+      </div>
+
+      {/* Navigation - Center */}
+      <nav className="flex flex-wrap justify-center gap-x-6 md:gap-x-10 items-center">
         {navLinks.map((link) => (
           <a
             key={link.name}
             href={link.href}
-            className="text-[10px] uppercase tracking-[0.4em] font-medium text-beige-900/70 hover:text-beige-900 transition-colors duration-700"
+            className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] font-medium text-beige-100/70 hover:text-beige-50 transition-colors duration-500"
           >
             {link.name}
           </a>
         ))}
       </nav>
+
+      {/* Icons - Right */}
+      <div className="flex-1 flex justify-end items-center space-x-6">
+        <a href="#" className="text-beige-100/80 hover:text-beige-50 transition-colors duration-500">
+          <User className="w-5 h-5 stroke-[1.5]" />
+        </a>
+        <a href="#" className="text-beige-100/80 hover:text-beige-50 transition-colors duration-500 relative">
+          <ShoppingBag className="w-5 h-5 stroke-[1.5]" />
+          <span className="absolute -top-1 -right-1 w-2 h-2 bg-beige-400 rounded-full"></span>
+        </a>
+      </div>
     </motion.header>
   );
 }

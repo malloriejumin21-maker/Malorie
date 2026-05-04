@@ -4,28 +4,10 @@ import clothesImg from "../assets/images/clothes.webp";
 export default function About() {
   return (
     <section className="py-80 px-8 md:px-24 bg-beige-100 relative overflow-hidden" id="about">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 lg:gap-32 items-center">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 2, ease: "easeOut" }}
-          className="text-left"
-        >
-          <span className="text-[10px] uppercase tracking-[0.8em] text-beige-900 mb-16 block font-semibold">
-            Paris - 3ème arrondissement
-          </span>
-          <h2 className="text-5xl md:text-6xl font-serif font-medium leading-[1.2] mb-16 text-beige-950">
-            Un espace <br /> bienveillant et <br /> créatif au cœur de Paris.
-          </h2>
-          <p className="text-lg font-medium leading-relaxed text-beige-900 max-w-md italic font-serif">
-            "Beige est un lieu singulier. Entre boutique de matières, coffee shop minimaliste et ateliers créatifs, nous avons sculpté avec tout notre amour un endroit accueillant et convivial."
-          </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 3, ease: "easeOut" }}
           className="relative"
@@ -38,6 +20,21 @@ export default function About() {
               referrerPolicy="no-referrer"
             />
           </div>
+        </motion.div>
+
+        <motion.div
+           initial={{ opacity: 0, x: 20 }}
+           whileInView={{ opacity: 1, x: 0 }}
+           viewport={{ once: true }}
+           transition={{ duration: 2, ease: "easeOut" }}
+           className="text-left"
+        >
+          <h2 className="text-5xl md:text-6xl font-serif font-medium leading-[1.2] mb-12 text-beige-950">
+            Un espace <br /> bienveillant et <br /> créatif au cœur de Paris.
+          </h2>
+          <p className="text-lg font-medium leading-relaxed text-beige-900 max-w-md italic font-serif">
+            "Beige est un lieu singulier. Entre boutique de matières, coffee shop minimaliste et ateliers créatifs, nous avons sculpté avec tout notre amour un endroit accueillant et convivial."
+          </p>
         </motion.div>
       </div>
     </section>
