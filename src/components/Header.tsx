@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 export default function Header() {
   const navLinks = [
-    { name: "shop", href: "#" },
+    { name: "boutique", href: "/shop" },
     { name: "menu coffee", href: "/menu" },
     { name: "événements", href: "#" },
     { name: "actualités", href: "#" },
