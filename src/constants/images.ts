@@ -17,7 +17,7 @@ export const getImageUrl = (input: string) => {
   if (!input) return "";
   
   // If it's already a direct Googleusercontent link, return it
-  if (input.includes("googleusercontent.com")) return input;
+  if (input.includes("googleusercontent.com") && !input.includes("drive.google.com")) return input;
 
   // Extract ID from full URL if necessary
   let id = input;
@@ -37,11 +37,6 @@ export const getImageUrl = (input: string) => {
   id = id.trim();
 
   // FORMATS
-  // Format A: Google Drive UC (Universal Content) - Official but picky
-  // return `https://drive.google.com/uc?export=view&id=${id}`;
-  
-  // Format B: Thumbnail (Faster, less blocked, good for high-quality previews)
-  const finalUrl = `https://drive.google.com/thumbnail?id=${id}&sz=w1600`;
-  
-  return finalUrl;
+  // Format C: Direct Link pattern (Highly stable for public shared files)
+  return `https://lh3.googleusercontent.com/d/${id}`;
 };
