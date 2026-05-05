@@ -3,8 +3,10 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import VignetteGrid from "./components/VignetteGrid";
 import About from "./components/About";
+import PartnerBrands from "./components/PartnerBrands";
 import Newsletter from "./components/Newsletter";
 import Testimonials from "./components/Testimonials";
+import LastEvent from "./components/LastEvent";
 import Footer from "./components/Footer";
 
 export default function App() {
@@ -43,6 +45,8 @@ export default function App() {
           <VignetteGrid />
           
           <About />
+          <LastEvent />
+          <PartnerBrands />
           <Newsletter />
           <Testimonials />
         </main>
