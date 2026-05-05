@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import clothesImg from "../assets/images/clothes.webp";
+import { IMAGE_IDS, getImageUrl } from "../constants/images";
 
 export default function About() {
   return (
@@ -14,7 +14,7 @@ export default function About() {
         >
           <div className="aspect-[4/5] rounded-[4rem] overflow-hidden warm-glow bg-beige-200">
             <img 
-              src={clothesImg} 
+              src={getImageUrl(IMAGE_IDS.clothes)} 
               alt="Warm minimalist beige retail local" 
               className="w-full h-full object-cover brightness-[1.02] contrast-[1.05]"
               referrerPolicy="no-referrer"

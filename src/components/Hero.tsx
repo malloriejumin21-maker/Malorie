@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import entranceImg from "../assets/images/entrance.png";
+import { IMAGE_IDS, getImageUrl } from "../constants/images";
 
 export default function Hero() {
   return (
@@ -11,7 +11,7 @@ export default function Hero() {
         className="absolute inset-0 z-0"
       >
         <img 
-          src={entranceImg} 
+          src={getImageUrl(IMAGE_IDS.entrance)} 
           alt="Warm beige minimalist coffee shop interior" 
           className="w-full h-full object-cover brightness-[1.02] contrast-[1.05]"
           referrerPolicy="no-referrer"

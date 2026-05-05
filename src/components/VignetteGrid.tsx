@@ -1,22 +1,20 @@
 import { motion } from "motion/react";
-import shopImg from "../assets/images/shop.webp";
-import coffeeImg from "../assets/images/coffee.webp";
-import atelierImg from "../assets/images/atelier.webp";
+import { IMAGE_IDS, getImageUrl } from "../constants/images";
 
 const vignettes = [
   {
     title: "Boutique",
-    image: shopImg,
+    image: getImageUrl(IMAGE_IDS.shop),
     description: "élégance et qualité"
   },
   {
     title: "Coffee",
-    image: coffeeImg,
+    image: getImageUrl(IMAGE_IDS.coffee),
     description: "café, caramel et cannelle"
   },
   {
     title: "Atelier",
-    image: atelierImg,
+    image: getImageUrl(IMAGE_IDS.atelier),
     description: "créer avec amour"
   }
 ];
