@@ -1,10 +1,11 @@
 import { motion } from "motion/react";
 import { User, ShoppingBag } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   const navLinks = [
     { name: "shop", href: "#" },
-    { name: "menu coffee", href: "#" },
+    { name: "menu coffee", href: "/menu" },
     { name: "événements", href: "#" },
     { name: "actualités", href: "#" },
     { name: "nous", href: "#" },
@@ -20,21 +21,31 @@ export default function Header() {
     >
       {/* Brand Logo - Left */}
       <div className="flex-1">
-        <a href="#" className="text-2xl font-serif tracking-[0.3em] lowercase text-beige-100 hover:text-beige-50 transition-colors duration-500">
+        <Link to="/" className="text-2xl font-serif tracking-[0.3em] lowercase text-beige-100 hover:text-beige-50 transition-colors duration-500">
           beige
-        </a>
+        </Link>
       </div>
 
       {/* Navigation - Center */}
       <nav className="flex flex-wrap justify-center gap-x-6 md:gap-x-10 items-center">
         {navLinks.map((link) => (
-          <a
-            key={link.name}
-            href={link.href}
-            className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] font-medium text-beige-100/70 hover:text-beige-50 transition-colors duration-500"
-          >
-            {link.name}
-          </a>
+          link.href.startsWith("/") ? (
+            <Link
+              key={link.name}
+              to={link.href}
+              className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] font-medium text-beige-100/70 hover:text-beige-50 transition-colors duration-500"
+            >
+              {link.name}
+            </Link>
+          ) : (
+            <a
+              key={link.name}
+              href={link.href}
+              className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] md:tracking-[0.4em] font-medium text-beige-100/70 hover:text-beige-50 transition-colors duration-500"
+            >
+              {link.name}
+            </a>
+          )
         ))}
       </nav>
 

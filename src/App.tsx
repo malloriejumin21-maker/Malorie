@@ -1,58 +1,49 @@
 import { motion, AnimatePresence } from "motion/react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import Header from "./components/Header";
-import Hero from "./components/Hero";
-import VignetteGrid from "./components/VignetteGrid";
-import About from "./components/About";
-import PartnerBrands from "./components/PartnerBrands";
-import Newsletter from "./components/Newsletter";
-import Testimonials from "./components/Testimonials";
-import LastEvent from "./components/LastEvent";
+import Home from "./pages/Home";
+import CoffeeMenu from "./pages/CoffeeMenu";
 import Footer from "./components/Footer";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 export default function App() {
   return (
-    <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.5, ease: "easeOut" }}
-        className="relative min-h-screen selection:bg-beige-300 selection:text-beige-900"
-      >
-        {/* Subtle Grain Overlay */}
-        <div className="grain-texture" />
-        
-        {/* Subtle Plaster Surface Overlay */}
-        <div className="fixed inset-0 pointer-events-none opacity-[0.05] plaster-surface z-0" />
-
-        <Header />
-        
-        <main className="relative z-10">
-          <Hero />
+    <Router>
+      <ScrollToTop />
+      <AnimatePresence mode="wait">
+        <motion.div
+          key="app-root"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          className="relative min-h-screen selection:bg-beige-300 selection:text-beige-900 overflow-x-hidden"
+        >
+          {/* Subtle Grain Overlay */}
+          <div className="grain-texture" />
           
-          {/* Main Title Section relocated above photos */}
-          <section className="pt-24 pb-8 bg-beige-100 text-center overflow-hidden">
-            <motion.h1 
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 2, ease: "easeOut" }}
-              className="text-beige-950 text-5xl md:text-8xl font-serif font-medium tracking-[0.6em] mr-[-0.6em]"
-            >
-              BEIGE
-            </motion.h1>
-          </section>
+          {/* Subtle Plaster Surface Overlay */}
+          <div className="fixed inset-0 pointer-events-none opacity-[0.05] plaster-surface z-0" />
 
-          <VignetteGrid />
+          <Header />
           
-          <About />
-          <LastEvent />
-          <PartnerBrands />
-          <Newsletter />
-          <Testimonials />
-        </main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/menu" element={<CoffeeMenu />} />
+          </Routes>
 
-        <Footer />
-      </motion.div>
-    </AnimatePresence>
+          <Footer />
+        </motion.div>
+      </AnimatePresence>
+    </Router>
   );
 }
