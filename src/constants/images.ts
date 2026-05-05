@@ -13,7 +13,35 @@ export const IMAGE_IDS = {
   atelier: "https://drive.google.com/file/d/1EUtQP9Z-YocZ4zs_Vh8imd2AjuqjHHEC/view?usp=share_link",
 };
 
-export const getImageUrl = (id: string) => {
-  if (id.startsWith("http")) return id;
-  return `https://drive.google.com/uc?export=view&id=${id}`;
+export const getImageUrl = (input: string) => {
+  if (!input) return "";
+  
+  // If it's already a direct Googleusercontent link, return it
+  if (input.includes("googleusercontent.com")) return input;
+
+  // Extract ID from full URL if necessary
+  let id = input;
+  if (input.includes("/file/d/")) {
+    const match = input.match(/\/file\/d\/([^/\?]+)/);
+    if (match && match[1]) {
+      id = match[1];
+    }
+  } else if (input.includes("id=")) {
+    const match = input.match(/id=([^&/]+)/);
+    if (match && match[1]) {
+      id = match[1];
+    }
+  }
+
+  // Clean potentially messy IDs
+  id = id.trim();
+
+  // FORMATS
+  // Format A: Google Drive UC (Universal Content) - Official but picky
+  // return `https://drive.google.com/uc?export=view&id=${id}`;
+  
+  // Format B: Thumbnail (Faster, less blocked, good for high-quality previews)
+  const finalUrl = `https://drive.google.com/thumbnail?id=${id}&sz=w1600`;
+  
+  return finalUrl;
 };
