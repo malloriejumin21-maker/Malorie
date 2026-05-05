@@ -10,7 +10,8 @@ export const IMAGE_IDS = {
   clothes: "https://drive.google.com/file/d/193tI1SsMLbGsFmROqWtBzeNl274oi6k2/view?usp=share_link",
   shop: "https://drive.google.com/file/d/1r1CmQPW0JoadVzn7K2jjJlWQ8f57JCSI/view?usp=share_link",
   coffee: "https://drive.google.com/file/d/1dpEHDLgfyOMzWRQHm3X6FUumpowDBkWE/view?usp=share_link",
-  atelier: "https://drive.google.com/file/d/1QP2A-o6W9EfCu9MuihdvtJjm2Sbat-Kt/view?usp=share_link",
+  atelier: "https://drive.google.com/file/d/1EUtQP9Z-YocZ4zs_Vh8imd2AjuqjHHEC/view?usp=share_link",
+  lastEvent: "https://drive.google.com/file/d/1QP2A-o6W9EfCu9MuihdvtJjm2Sbat-Kt/view?usp=share_link",
 };
 
 export const getImageUrl = (input: string) => {

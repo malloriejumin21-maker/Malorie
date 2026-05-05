@@ -43,7 +43,7 @@ export default function LastEvent() {
           >
             <div className="aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl relative">
               <img 
-                src={getImageUrl(IMAGE_IDS.atelier)} 
+                src={getImageUrl(IMAGE_IDS.lastEvent)} 
                 alt="Ateliers créatifs Beige"
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
               />
