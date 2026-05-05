@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import VignetteGrid from "./components/VignetteGrid";
 import About from "./components/About";
 import Newsletter from "./components/Newsletter";
+import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
 
 export default function App() {
@@ -43,6 +44,7 @@ export default function App() {
           
           <About />
           <Newsletter />
+          <Testimonials />
         </main>
 
         <Footer />
