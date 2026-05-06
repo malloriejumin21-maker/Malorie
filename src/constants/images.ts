@@ -13,6 +13,12 @@ export const IMAGE_IDS = {
   coffeeMenu: "https://drive.google.com/file/d/15DY53nn9vd320GPfJ2tL7Zh6jrinStG9/view?usp=share_link",
   atelier: "https://drive.google.com/file/d/1EUtQP9Z-YocZ4zs_Vh8imd2AjuqjHHEC/view?usp=share_link",
   lastEvent: "https://drive.google.com/file/d/1QP2A-o6W9EfCu9MuihdvtJjm2Sbat-Kt/view?usp=share_link",
+  product1: "https://drive.google.com/file/d/1q6JynJAfenqMO3d8Kc7yov5AnOn4zSr8/view?usp=share_link",
+  product2: "https://drive.google.com/file/d/1envKChkBHUKjXmriCIHZym5KfBw7ZATt/view?usp=share_link",
+  product3: "https://drive.google.com/file/d/1BRLdpfVweSPMky7QT0Ks5LGHCCup5yHv/view?usp=share_link",
+  product4: "https://drive.google.com/file/d/1E8ZnuERBIeSFua-21JWx6BrBO1TBcSra/view?usp=share_link",
+  product5: "https://drive.google.com/file/d/1NnCU7CKAmKOd9lpe88crPXgK_WzjV78Z/view?usp=share_link",
+  product6: "https://drive.google.com/file/d/1jMPtN7UiOdwgtP3gXeNIk3vQG3dyWyVl/view?usp=share_link",
 };
 
 export const getImageUrl = (input: string) => {
