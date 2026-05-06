@@ -2,7 +2,11 @@ import { motion } from "motion/react";
 import { User, ShoppingBag } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export default function Header() {
+interface HeaderProps {
+  onCartOpen: () => void;
+}
+
+export default function Header({ onCartOpen }: HeaderProps) {
   const navLinks = [
     { name: "boutique", href: "/shop" },
     { name: "menu coffee", href: "/menu" },
@@ -54,10 +58,13 @@ export default function Header() {
         <a href="#" className="text-beige-100/80 hover:text-beige-50 transition-colors duration-500">
           <User className="w-5 h-5 stroke-[1.5]" />
         </a>
-        <a href="#" className="text-beige-100/80 hover:text-beige-50 transition-colors duration-500 relative">
+        <button 
+          onClick={onCartOpen}
+          className="text-beige-100/80 hover:text-beige-50 transition-colors duration-500 relative"
+        >
           <ShoppingBag className="w-5 h-5 stroke-[1.5]" />
           <span className="absolute -top-1 -right-1 w-2 h-2 bg-beige-400 rounded-full"></span>
-        </a>
+        </button>
       </div>
     </motion.header>
   );

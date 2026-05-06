@@ -1,7 +1,8 @@
 import { motion, AnimatePresence } from "motion/react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Header from "./components/Header";
+import Cart from "./components/Cart";
 import Home from "./pages/Home";
 import CoffeeMenu from "./pages/CoffeeMenu";
 import Shop from "./pages/Shop";
@@ -18,6 +19,8 @@ function ScrollToTop() {
 }
 
 export default function App() {
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
   return (
     <Router>
       <ScrollToTop />
@@ -35,7 +38,8 @@ export default function App() {
           {/* Subtle Plaster Surface Overlay */}
           <div className="fixed inset-0 pointer-events-none opacity-[0.05] plaster-surface z-0" />
 
-          <Header />
+          <Header onCartOpen={() => setIsCartOpen(true)} />
+          <Cart isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
           
           <Routes>
             <Route path="/" element={<Home />} />
